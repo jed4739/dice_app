@@ -15,13 +15,14 @@
         android:layout_height="match_parent"
         android:background="#008000"
         android:orientation="vertical"
+        android:gravity="center"
         tools:context=".MainActivity">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="100dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -32,6 +33,14 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:text="인생은 주사위 한방에 가는거 아니겠습니까?" />
+            <TextView
+                android:id="@+id/sumNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="0"/>
 
         </LinearLayout>
 
