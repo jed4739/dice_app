@@ -53,22 +53,22 @@ public class MainActivity extends AppCompatActivity {
 
         switch (num2) {
             case 1:
-                binding.dice1.setImageResource(R.drawable.dice_1);
+                binding.dice2.setImageResource(R.drawable.dice_1);
                 break;
             case 2:
-                binding.dice1.setImageResource(R.drawable.dice_2);
+                binding.dice2.setImageResource(R.drawable.dice_2);
                 break;
             case 3:
-                binding.dice1.setImageResource(R.drawable.dice_3);
+                binding.dice2.setImageResource(R.drawable.dice_3);
                 break;
             case 4:
-                binding.dice1.setImageResource(R.drawable.dice_4);
+                binding.dice2.setImageResource(R.drawable.dice_4);
                 break;
             case 5:
-                binding.dice1.setImageResource(R.drawable.dice_5);
+                binding.dice2.setImageResource(R.drawable.dice_5);
                 break;
             case 6:
-                binding.dice1.setImageResource(R.drawable.dice_6);
+                binding.dice2.setImageResource(R.drawable.dice_6);
                 break;
         }
     }
