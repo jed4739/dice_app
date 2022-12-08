@@ -15,6 +15,12 @@ import com.example.dice_app.databinding.Main;
 
 import java.util.Random;
 
+/**
+ * 구현 기능 목록
+ * 버튼을 누를 시 주사위이미지 랜덤 출력 - 완
+ * shake 모션으로 버튼 클릭 효과 나타내기 - 완
+ * 두 주사위의 값의 합산 결과를 화면에 나타내기 - 완
+ * */
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
     Main binding;
 
@@ -35,16 +41,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void startBtn() {
-
         Random random = new Random();
         int num1 = random.nextInt(6) + 1;
         int num2 = random.nextInt(6) + 1;
-        Log.d("RandomNumber", String.valueOf(num1));
-        Log.d("RandomNumber", String.valueOf(num2));
+        Log.d("RandomNumber", "첫번째 주사위의 값: " + num1);
+        Log.d("RandomNumber", "두번째 주사위의 값: " + num2);
 
+        // 두 주사위의 값 합산 후 TextView 로 나타남.
         binding.sumNumber.setText(String.valueOf(num1 + num2));
 
         int[] img = {R.drawable.dice_1, R.drawable.dice_2, R.drawable.dice_3, R.drawable.dice_4, R.drawable.dice_5, R.drawable.dice_6};
+
+        // 첫번째 주사위 이미지 출력
         for (int i = 0; i < img.length; i++ ) {
             int j = num1 - 1;
             if(i == j){
@@ -52,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 break;
             }
         }
+        // 두번째 주사위 이미지 출력
         for (int i = 0; i < img.length; i++ ) {
             int j = num2 - 1;
             if(i == j){
@@ -62,12 +71,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
+    // SensorEventListener 등록
     @Override
     protected void onResume() {
         super.onResume();
         sensorManager.registerListener(this, sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
+    // SensorEventListener 해제
     @Override
     protected void onPause() {
         super.onPause();
