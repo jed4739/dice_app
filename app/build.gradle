@@ -5,7 +5,9 @@ plugins {
 android {
     namespace 'com.example.dice_app'
     compileSdk 32
-
+    buildFeatures{
+        dataBinding true
+    }
     defaultConfig {
         applicationId "com.example.dice_app"
         minSdk 32
@@ -23,9 +25,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
+
 }
 
 dependencies {
